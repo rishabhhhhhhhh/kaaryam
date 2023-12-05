@@ -11,15 +11,29 @@ const Login = () => {
           className="image1-signin-page"
           src="/kaaryam2.png" // Replace with the actual path to your image
           alt="Logo"
-          width={300}
-          height={300}
+          width={150}
+          height={150}
         />
         <Image
           className="image2-signin-page"
           src="/kaaryam1.png" // Replace with the actual path to your image
           alt="Logo"
-          width={300}
-          height={300}
+          width={150}
+          height={150}
+        />
+        <Image
+          className="image3-signin-page"
+          src="/kaaryam2.png" // Replace with the actual path to your image
+          alt="Logo"
+          width={250}
+          height={250}
+        />
+        <Image
+          className="image4-signin-page"
+          src="/kaaryam1.png" // Replace with the actual path to your image
+          alt="Logo"
+          width={250}
+          height={250}
         />
       </div>
       <div className=" p-8 rounded-lg shadow-md w-96 login-page-box">
