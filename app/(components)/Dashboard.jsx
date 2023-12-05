@@ -52,7 +52,6 @@ const Dashboard = ({ user: { email } }) => {
   };
 
   useEffect(() => {
-    console.log("Called again ::: ");
     getTasks();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [email]);
@@ -65,7 +64,6 @@ const Dashboard = ({ user: { email } }) => {
     );
   }
 
-  console.log("TASKSTASKS::", tasks);
   if (tasks === null || tasks === undefined || tasks.length === 0) {
     return <NoDataComponent />;
   }

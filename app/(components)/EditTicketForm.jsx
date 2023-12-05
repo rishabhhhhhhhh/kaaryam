@@ -17,9 +17,7 @@ const EditTicketForm = ({ ticketId, user: { email } }) => {
   ];
 
   const getUserTicketData = async () => {
-    console.log("ticketId:", ticketId);
     if (ticketId !== "new") {
-      console.log("What is value");
       try {
         setIsLoading(true);
         const res = await fetch(`${SERVER_URL}/api/Tickets/${ticketId}`, {
@@ -44,14 +42,11 @@ const EditTicketForm = ({ ticketId, user: { email } }) => {
 
   const getUserCategories = async () => {
     try {
-      console.log("Inside get user categories");
       const res = await fetch(`${SERVER_URL}/api/userCategory/${email}`);
-      console.log("Data fetched");
 
       if (!res.ok) {
         throw new Error("Failed to fetch user categories");
       }
-      console.log("Successfully");
 
       const userCategories = await res.json();
       setUserCategories(
@@ -111,11 +106,9 @@ const EditTicketForm = ({ ticketId, user: { email } }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("FormData::", formData);
 
     if (formData["customCategory"]) {
       const ans = capitalizeFirstLetter(formData["customCategory"]);
-      console.log("Ans : ", ans);
       formData["customCategory"] = ans;
     }
 

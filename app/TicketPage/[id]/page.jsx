@@ -8,8 +8,6 @@ const TicketPage = ({ params }) => {
   const router = useRouter();
 
   if (session) {
-    console.log("Session: ", session);
-
     return <EditTicketForm ticketId={params.id} user={session.user} />;
   }
   router.push("/");

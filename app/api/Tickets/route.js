@@ -9,7 +9,6 @@ export async function GET() {
 
     return NextResponse.json({ tickets }, { status: 200 });
   } catch (err) {
-    console.log(err);
     return NextResponse.json({ message: "Error", err }, { status: 500 });
   }
 }
@@ -20,16 +19,11 @@ export async function POST(req) {
     const ticketData = body.formData;
 
     if (ticketData.category == "Add a new category") {
-      console.log("Found a new category : " + ticketData);
       const countOfDocument = await UserCategory.countDocuments({
         category: capitalizeFirstLetter(ticketData.customCategory),
       });
-      console.log("Documents Count : " + countOfDocument);
 
       if (countOfDocument == 0) {
-        console.log(
-          "Creating new document with category: " + ticketData.category
-        );
         await UserCategory.create({
           userEmail: ticketData.userEmail,
           category: capitalizeFirstLetter(ticketData.customCategory),
@@ -42,7 +36,6 @@ export async function POST(req) {
 
     return NextResponse.json({ message: "Ticket Created" }, { status: 201 });
   } catch (err) {
-    console.log(err);
     return NextResponse.json({ message: "Error", err }, { status: 500 });
   }
 }
