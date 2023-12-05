@@ -1,5 +1,5 @@
-export const SERVER_URL = "http://localhost:3000";
-// export const SERVER_URL = "https://kaaryam.vercel.app/";
+// export const SERVER_URL = "http://localhost:3000";
+export const SERVER_URL = "https://kaaryam.vercel.app/";
 
 export function formatTimestamp(timestamp) {
   const options = {
