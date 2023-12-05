@@ -14,7 +14,7 @@ const Dashboard = ({ user: { email } }) => {
   const [isLoading, setIsLoading] = useState(true);
 
   const deleteTask = async (id) => {
-    const res = await fetch(`http://localhost:3000/api/Tickets/${id}`, {
+    const res = await fetch(`${SERVER_URL}/api/Tickets/${id}`, {
       method: "DELETE",
     });
     if (res.ok) {
