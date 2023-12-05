@@ -208,7 +208,9 @@ const EditTicketForm = ({ ticketId, user: { email } }) => {
                 name="customCategory"
                 type="text"
                 onChange={handleChange}
-                required={false}
+                required={
+                  formData.category == "Add a new category" ? true : false
+                }
                 value={formData.customCategory}
               />
             </>
