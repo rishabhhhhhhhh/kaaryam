@@ -9,8 +9,8 @@ const EditTicketForm = ({ ticketId, user: { email } }) => {
   const [isLoading, setIsLoading] = useState(false);
 
   const DEFAULT_CATEGORIES = [
-    "Deep Work",
-    "Shallow Work",
+    "Deep work",
+    "Shallow work",
     "Home",
     "Meeting",
     "Add a new category",
@@ -139,7 +139,9 @@ const EditTicketForm = ({ ticketId, user: { email } }) => {
     router.push("/");
   };
 
-  const categories = [...userCategories, ...DEFAULT_CATEGORIES];
+  const categories = Array.from(
+    new Set([...userCategories, ...DEFAULT_CATEGORIES])
+  );
 
   if (!email) {
     router.push("/");

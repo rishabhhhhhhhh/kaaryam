@@ -28,8 +28,8 @@ export async function POST(req) {
           userEmail: ticketData.userEmail,
           category: capitalizeFirstLetter(ticketData.customCategory),
         });
-        ticketData.category = ticketData.customCategory;
       }
+      ticketData.category = ticketData.customCategory;
     }
 
     await Ticket.create(ticketData);
